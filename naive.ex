@@ -25,7 +25,5 @@ defmodule Naive do
 
   def fact(1) do
     1
-  end
-  
-      
+  end 
 end
