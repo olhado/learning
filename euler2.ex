@@ -2,6 +2,11 @@ defmodule Euler2 do
   import Accumulator
   import Integer
 
+  def solve do
+    IO.puts inspect :timer.tc(Euler2, :sum_even_fib, [4000000])
+    IO.puts inspect :timer.tc(Euler2, :sum_even_fib2, [4000000])
+  end
+
   def sum_even_fib(max_val) when is_integer(max_val) and max_val >= 1 do
     sum_even_fib(max_val, 1, 0)
   end
@@ -31,10 +36,4 @@ defmodule Euler2 do
         acc
     end
   end
-
-  def solve do
-    IO.puts inspect :timer.tc(Euler2, :sum_even_fib, [4000000])
-    IO.puts inspect :timer.tc(Euler2, :sum_even_fib2, [4000000])
-  end
-
 end
