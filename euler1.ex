@@ -1,6 +1,11 @@
 defmodule Euler1 do
 	
-  def sum_threes_and_fives(x) when is_integer(x) and x > 0 do
+  def solve do
+    IO.puts inspect :timer.tc(Euler1, :sum_threes_and_fives, [1000])
+    IO.puts inspect :timer.tc(Euler1, :lc_sum_threes_and_fives, [1000])
+  end
+
+def sum_threes_and_fives(x) when is_integer(x) and x > 0 do
     range = 1..(x-1)
     Enum.filter(range, fn(num) -> threes_or_fives(num) end)
     |> Enum.reduce(fn(num, acc) -> num + acc end)
@@ -28,10 +33,4 @@ defmodule Euler1 do
   defp threes_or_fives(_) do
     false
   end
-
-  def solve do
-    IO.puts inspect :timer.tc(Euler1, :sum_threes_and_fives, [1000])
-    IO.puts inspect :timer.tc(Euler1, :lc_sum_threes_and_fives, [1000])
-  end
-
 end
